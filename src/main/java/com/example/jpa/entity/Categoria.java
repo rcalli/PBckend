@@ -15,6 +15,7 @@ import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  *
@@ -23,19 +24,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@ToString
 @Entity
 @Table(name = "categorias")
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
-    private Long id;
-    @Column(name = "nombre")
-    private String nombre;
-    @Column(name = "estado")
-    private char estado = '1';
-    
-    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy = "categoria")
-    @JsonIgnore
-    private Set<Producto> productos;
+
+    Long id;
+
+    String nombre;
+
+    Double estado;
+    /**we should  use private*/
+
 }

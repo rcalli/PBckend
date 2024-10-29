@@ -20,11 +20,13 @@ public class CategoriaServiceImpl implements CategoriaService{
     private CategoriaRepository categoriaRepository;
     @Override
     public Categoria create(Categoria cat) {
+
         return categoriaRepository.save(cat);
     }
 
     @Override
     public Categoria update(Categoria cat) {
+
         return categoriaRepository.save(cat);
     }
 
@@ -35,11 +37,13 @@ public class CategoriaServiceImpl implements CategoriaService{
 
     @Override
     public Optional<Categoria> read(Long id) {
+
         return categoriaRepository.findById(id);
     }
 
     @Override
     public List<Categoria> readAll() {
+
         return categoriaRepository.findAll();
     }
     
